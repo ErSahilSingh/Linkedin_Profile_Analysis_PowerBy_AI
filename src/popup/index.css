@@ -1,0 +1,138 @@
+:root {
+  --primary: #0a66c2;
+  --primary-hover: #004182;
+  --bg-color: #f3f2ef;
+  --card-bg: #ffffff;
+  --text-main: rgba(0, 0, 0, 0.9);
+  --text-secondary: rgba(0, 0, 0, 0.6);
+  --border-color: #e0e0e0;
+  --success: #057647;
+  --warning: #915907;
+  --danger: #d11124;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-color: #000000;
+    --card-bg: #1d2226;
+    --text-main: rgba(255, 255, 255, 0.9);
+    --text-secondary: rgba(255, 255, 255, 0.6);
+    --border-color: #38434f;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family:
+    -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", "Fira Sans", Ubuntu, Oxygen, "Oxygen Sans", Cantarell,
+    "Droid Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+    "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  width: 400px; /* Chrome extension popup width */
+}
+
+.app-container {
+  padding: 16px;
+  min-height: 400px;
+}
+
+.card {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 12px;
+  box-shadow:
+    0 0 0 1px rgba(0, 0, 0, 0.02),
+    0 2px 4px rgba(0, 0, 0, 0.06);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 16px;
+  border-radius: 1600px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  border: none;
+  font-size: 14px;
+}
+
+.btn-primary {
+  background-color: var(--primary);
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-hover);
+}
+
+.btn-outline {
+  background: transparent;
+  border: 1px solid var(--primary);
+  color: var(--primary);
+}
+
+.btn-outline:hover {
+  background: rgba(10, 102, 194, 0.1);
+  border-width: 2px;
+  padding: 7px 15px;
+}
+
+.input {
+  width: 100%;
+  padding: 8px 12px;
+  border-radius: 4px;
+  border: 1px solid var(--border-color);
+  background: var(--card-bg);
+  color: var(--text-main);
+  margin-bottom: 12px;
+}
+
+.loading-spinner {
+  width: 24px;
+  height: 24px;
+  border: 3px solid rgba(10, 102, 194, 0.2);
+  border-radius: 50%;
+  border-top-color: var(--primary);
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.score-badge {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.score-high {
+  color: var(--success);
+}
+.score-mid {
+  color: var(--warning);
+}
+.score-low {
+  color: var(--danger);
+}
+
+h1,
+h2,
+h3 {
+  margin-top: 0;
+}
